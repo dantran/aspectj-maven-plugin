@@ -698,9 +698,9 @@ public abstract class AbstractAjcCompiler extends AbstractAjcMojo {
                     }
                 }
                 if (artifact == null) {
-                    this.getLog().info("List of dependencies when error occurs:");
+                    this.getLog().error("List of dependencies( " + allArtifacts.size() + ") when error occurs:");
                     for (Artifact art : allArtifacts) {
-                        this.getLog().info("    " + art.toString());
+                        this.getLog().error("    " + art.toString());
                     }
                     throw new MojoExecutionException(
                             "The artifact " + module.toString() + " referenced in aspectj plugin as " + role

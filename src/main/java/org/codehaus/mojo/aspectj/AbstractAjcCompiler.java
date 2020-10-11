@@ -698,6 +698,9 @@ public abstract class AbstractAjcCompiler extends AbstractAjcMojo {
                     }
                 }
                 if (artifact == null) {
+                    for (Artifact art : allArtifacts) {
+                        this.getLog().info(art.toString());
+                    }
                     throw new MojoExecutionException(
                             "The artifact " + module.toString() + " referenced in aspectj plugin as " + role
                                     + ", is not found the project dependencies");
